@@ -1,7 +1,9 @@
 FROM alpine:3.3
 MAINTAINER Hidetoshi Imai <hidepin@gmail.com>
 
-RUN apk add --update nodejs ansible sshpass \
+RUN apk add --update nodejs ansible sshpass tzdata \
+&& cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+&& echo "Asia/Tokyo" >  /etc/timezone \
 && npm install -g npm \
 && npm install -g yo generator-hubot \
 && adduser hubot -D
