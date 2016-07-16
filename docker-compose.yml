@@ -1,0 +1,17 @@
+version: '2'
+# matterbotの設定
+services:
+  app:
+    build:
+      context: app
+      args:
+        - MATTERMOST_HUBOT_USERNAME=matterbot
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - MATTERMOST_ENDPOINT=/hubot/incoming
+      - MATTERMOST_SELFSIGNED_CERT=true
+      - MATTERMOST_INCOME_URL=http://xxx.xxx.xxx/hooks/xxxxxxxxxxxxxxxxxxxxx
+      - MATTERMOST_TOKEN=xxxxxxxxxxxxxxxxxxxx
+    ports:
+      - "8080:8080"
