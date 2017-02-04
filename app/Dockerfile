@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:latest
 MAINTAINER Hidetoshi Imai <hidepin@gmail.com>
 
 RUN apk add --update nodejs ansible sshpass tzdata && \
